@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+
+</head>
+<body>
+
+    <div class="window-container">
+        <div class="window-title">환영합니다!</div>
+            <h2>안녕하세요, {{ nickname }}님!<br>환영합니다!</h2>
+            <!--p>ID: {{ username }}</p-->
+            <hr>
+            <button onclick="location.href='logout'">로그아웃</button>
+
+    </div>
+
+</body>
+</html>

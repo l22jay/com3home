@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="window-container">
+        <div class="window-title">회원가입</div>
+        <form method="post">
+            <label for="username">ID:</label>
+            <input type="text" id="username" name="username">
+            <hr>
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email">
+            <hr>
+            <label for="nickname">별명:</label>
+            <input type="text" id="nickname" name="nickname">
+            <hr>
+            <label for="password">암호:</label>
+            <input type="password" id="password" name="password">
+            <p>암호는 최소 8자 이상이어야 하며, <br>대문자, 소문자, 숫자, 특수 문자를 포함해야 합니다.</p>
+            <hr>
+            <label for="confirm_password">암호 확인:</label>
+            <input type="password" id="confirm_password" name="confirm_password">
+            <hr>
+            <button type="submit">회원가입</button>
+        </form>
+        {% if error %}
+        <div id="message">{{ error }}</div>
+        {% endif %}
+        <p>이미 계정이 있으시면 <a href="{{ url_for('login') }}">이곳에서 로그인하십시오...</a></p>
+    </div>
+</body>
+</html>

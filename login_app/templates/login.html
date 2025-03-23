@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="window-container">
+        <div class="window-title">로그인</div>
+        <form method="post">
+            <label for="username">ID:</label>
+            <input type="text" id="username" name="username">
+            <hr>
+            <label for="password">암호:</label>
+            <input type="password" id="password" name="password">
+            <hr>
+            <button type="submit">로그인</button>
+        </form>
+        {% if error %}
+        <div id="message">{{ error }}</div>
+        {% endif %}
+        <p>계정을 가지고 있지 않으시면 <a href="{{ url_for('register') }}">이곳에서 회원가입을 하십시오...</a></p>
+    </div>
+</body>
+</html>
